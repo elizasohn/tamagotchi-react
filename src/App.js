@@ -1,32 +1,37 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './Header';
-import Tamagotchi from './Tamagotchi';
-import Footer from './Footer';
+import Header from './components/Header';
+import Tamagotchi from './components/Tamagotchi';
+import Footer from './components/Footer';
 import PropTypes from 'prop-types';
+import NewTamagotchi from './components/NewTamagotchi';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      tamagotchiStats: {};
+  // constructor(props){
+  //   super(props);
+    state = {
+      name : '',
     }
-  }
+  // }
+
+  handleNewName = name => {
+    this.setState({
+      name: name });
+};
+
   render() {
     return (
       <div className="App">
-      <Header/>
-      <Tamagotchi/>
-      <Footer/>
+      <Header />
+      <NewTamagotchi onNewPostSubmission={this.handleNewName}/>
+      <Tamagotchi name={this.state.name}/>
+      <Footer />
       </div>
     );
   }
 }
 Tamagotchi.propTypes = PropTypes.shape({
-    name: PropTypes.string,
-    foodLevel: PropTypes.number,
-    playLevel: PropTypes.number,
-    cleanLevel: PropTypes.number,
-  });
+  name: PropTypes.string,
+});
 export default App;

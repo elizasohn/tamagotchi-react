@@ -1,18 +1,16 @@
 import React from 'react'
+import NewTamagotchi from './NewTamagotchi'
+import PropTypes from 'prop-types'
 
-export default class Tamagotchi extends React.Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      tamagotchiStats: [];
-    }
-  }
-
-render() {
+function Tamagotchi(props) {
   return (
     <div>
+    <h1>{props.name}</h1>
     </div>
-  )
+  );
+}
+Tamagotchi.propTypes = {
+  name: PropTypes.string
 }
 
-}
+export default Tamagotchi;
