@@ -15,7 +15,7 @@ class App extends React.Component {
     }
   // }
 
-  handleNewName = name => {
+  handleStartGame = name => {
     this.setState({
       name: name });
 };
@@ -24,7 +24,7 @@ class App extends React.Component {
     return (
       <div className="App">
       <Header />
-      <NewTamagotchi onNewPostSubmission={this.handleNewName}/>
+      <NewTamagotchi elizaIsVeryCool={this.handleStartGame}/>
       <Tamagotchi name={this.state.name}/>
       <Footer />
       </div>

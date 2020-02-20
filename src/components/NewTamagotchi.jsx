@@ -8,8 +8,9 @@ function NewTamagotchiForm(props) {
   function handleNewName(event){
     event.preventDefault();
     console.log(_name.value);
-    props.onNewPostSubmission(_name.value);
+    props.elizaIsVeryCool(_name.value);
     _name.value = ''
+
   }
 
   return (
